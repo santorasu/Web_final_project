@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BanglaTravels</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>BanglaTravels</h1>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="auth-links">
+                    <a href="login.html">Login</a> | <a href="signup.html">Sign Up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Explore the Beauty of Bangladesh</h2>
+        <p>Discover stunning landscapes, rich culture, and vibrant cities.</p>
+        <a href="#destinations" class="btn">Start Your Journey</a>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="destination-list">
+            <div class="destination">
+                <a href="./Sundorbon/sundarbans.html">
+                    <img src="asset/tiger.jpg" alt="Sundarbans">
+                    <div class="destination-info">
+                        <h3>Sundarbans</h3>
+                        <p>The largest mangrove forest in the world.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="./CoxBazar/coxbazar.html">
+                    <img src="asset/Cox's Bazar.jpg" alt="Cox's Bazar">
+                    <div class="destination-info">
+                        <h3>Cox's Bazar</h3>
+                        <p>The longest natural sea beach in the world.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="./Sylhet/sylhet.html">
+                    <img src="asset/Bisnakandi-Sylhet.jpg" alt="Sylhet">
+                    <div class="destination-info">
+                        <h3>Sylhet</h3>
+                        <p>The land of tea gardens and natural beauty.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="./Rangamati/rangamati.html">
+                    <img src="asset/Rangamati_hanging_Bridge.jpg" alt="Rangamati">
+                    <div class="destination-info">
+                        <h3>Rangamati</h3>
+                        <p>Known for its scenic hills and lakes.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="./Sajek/sajek.html">
+                    <img src="asset/sajek2.jpg" alt="Sajek Valley">
+                    <div class="destination-info">
+                        <h3>Sajek Valley</h3>
+                        <p>A valley with stunning landscapes and cloud-kissed mountains.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="./Saint Maritn/saintmartin.html">
+                    <img src="asset/Saint-Martin.jpg" alt="Saint Martin's Island">
+                    <div class="destination-info">
+                        <h3>Saint Martin's Island</h3>
+                        <p>The only coral island in Bangladesh.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-us">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p id="short-description">
+                    BanglaTravels is your ultimate guide to discovering the hidden gems of Bangladesh.
+                </p>
+                <p id="full-description" style="display: none;">
+                    From breathtaking landscapes to vibrant cultural experiences, we are dedicated to helping you explore the beauty and diversity of this amazing country. Our mission is to provide travelers with the best resources and insights for planning an unforgettable journey. Whether you're an adventure seeker, culture enthusiast, or simply looking to relax, BanglaTravels is here to make your trip memorable. Join us as we explore the rich history, diverse culture, and stunning natural beauty that make Bangladesh a unique destination.
+                </p>
+                <button id="toggle-btn">Show More</button>
+            </div>
+            <div class="about-image">
+                <img src="asset/about-us.jpg" alt="About Us">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-us">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, we're here to help. Feel free to reach out to us through any of the methods below:</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>santorasu09@gmail.com <br>mdfarhanafsar@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p>+880 1785 412 308</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Address</h3>
+                    <p>Dhaka, Bangladesh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BanglaTravels. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const user = JSON.parse(localStorage.getItem("user")); // Fetch user data
+            const authLinks = document.getElementById("auth-links");
+            const navMenu = document.getElementById("nav-menu");
+
+            if (user && user.isLoggedIn && user.hasPurchased) {
+                // Show logged-in user name and logout button
+                authLinks.innerHTML = `<span>Welcome, ${user.name}</span> | <button id="logout-btn">Logout</button>`;
+
+                // Logout functionality
+                document.getElementById("logout-btn").addEventListener("click", function () {
+                    localStorage.removeItem("user");
+                    location.reload();
+                });
+            }
+        });
+    </script>
+
+    <script src="./JavaScript/toggle.js"></script>
+</body>
+</html>

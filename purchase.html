@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Ticket</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+        body {
+            font-family: 'Winky Sans', monospace;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .purchase-container {
+            width: 400px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #greeting {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+            text-align: left;
+        }
+
+        form select, form input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        #price-container {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="purchase-container">
+        <p id="greeting">Welcome, <span id="username"></span>!</p>
+        <form id="purchase-form">
+            <label for="start">Starting Location:</label>
+            <select id="start" required>
+                <option value="" disabled selected>Select Starting Point</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Chattogram">Chattogram</option>
+                <option value="Khulna">Khulna</option>
+            </select>
+
+            <label for="destination">Destination:</label>
+            <select id="destination" required>
+                <option value="" disabled selected>Select Destination</option>
+                <option value="Rangamati">Rangamati</option>
+                <option value="Saintmartin">Saintmartin</option>
+                <option value="Sajek">Sajek</option>
+                <option value="Cox's Bazar">Cox's Bazar</option>
+                <option value="Sundarbans">Sundarbans</option>
+                <option value="Sylhet">Sylhet</option>
+            </select>
+
+            <label for="date">Date of Travel:</label>
+            <input type="date" id="date" required>
+
+            <div id="price-container">Price: <span id="price">-</span> BDT</div>
+
+            <button type="submit">Purchase Ticket</button>
+        </form>
+    </div>
+
+    <script>
+        const user = localStorage.getItem("user") || "Guest";
+        document.getElementById("username").textContent = user;
+
+        const priceList = {
+            "Rangamati": 1500, "Saintmartin": 2200, "Sajek": 1800,
+            "Cox's Bazar": 2000, "Sundarbans": 2500, "Sylhet": 1300
+        };
+
+        document.getElementById("destination").addEventListener("change", function() {
+            document.getElementById("price").textContent = priceList[this.value] || "-";
+        });
+
+        document.getElementById("purchase-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const start = document.getElementById("start").value;
+            const destination = document.getElementById("destination").value;
+            const date = document.getElementById("date").value;
+            const price = priceList[destination];
+
+            if (!start || !destination || !date) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            const ticketData = { user: user, start, destination, date, price };
+
+            fetch("http://localhost:5000/purchase", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(ticketData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Ticket Purchased Successfully!");
+                localStorage.setItem("purchased", "true"); // Store purchase status
+                window.location.href = "index.html"; // Redirect to index.html
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+
+</body>
+</html>

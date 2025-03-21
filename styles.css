@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+::placeholder {
+    font-family: 'Winky Sans', monospace;
+  }
+  
+  /* Global style for button to use the same font */
+  button {
+    font-family: 'Winky Sans', monospace;
+  }
+/* General Body Styling */
+body {
+    font-family: "Winky Sans", sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form Inputs */
+  .auth-container form input[type="text"],
+  .auth-container form input[type="email"],
+  .auth-container form input[type="password"] { 
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .auth-container form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+  .auth-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form Button */
+  .auth-container form button {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .auth-container form button:hover {
+    background: #0056b3;
+  }
+  
+  /* Purchase Page Styling */
+  .purchase-container {
+    width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .purchase-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .purchase-container button {
+    padding: 10px 20px;
+    background: #28a745;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .purchase-container button:hover {
+    background: #218838;
+  }
+  

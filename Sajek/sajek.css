@@ -1,0 +1,105 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    font-family: 'Winky Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    color: white;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Nova Mono', monospace;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-family: 'Nova Mono', monospace;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Main Content */
+.destination-page {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.destination-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.destination-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.description {
+    text-align: left;
+    padding: 20px;
+}
+
+.description h2 {
+    color: #2c3e50;
+    font-family: 'Nova Mono', monospace;
+}
+
+.description p {
+    color: #555;
+    line-height: 1.6;
+    font-family: 'Winky Sans', sans-serif;
+}
+
+.description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333;
+    font-family: 'Winky Sans', sans-serif;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 50px;
+    font-family: 'Nova Mono', monospace;
+}

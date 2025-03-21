@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    font-family: 'Winky Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+.hero {
+    text-align: center;
+    background-image: url('asset/blossom.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero .btn {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #3498db;
+}
+
+/* Destinations Section Styles */
+.destinations {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.destinations h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.destination-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.destination {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(41, 128, 185, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.destination:hover {
+    transform: translateY(-5px);
+}
+
+.destination a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.destination-info {
+    padding: 1.5rem;
+}
+
+.destination-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.25rem;
+}
+
+.destination-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+/* About Us Section */
+.about-us {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-container h2 {
+    grid-column: span 2;
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* new add */
+#toggle-btn {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Winky Sans", sans-serif;
+}
+
+#toggle-btn:hover {
+    background-color: #3498db;
+}
+
+
+
+
+
+/* Contact Us Section */
+.contact-us {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.contact-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(41, 128, 185, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(41, 128, 185, 0.2);
+}
+
+.contact-item i {
+    font-size: 36px;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.contact-item h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 18px;
+    color: #777;
+}
+
+
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 14px;
+}
+footer p{
+    color: #ffffff;
+}
+
+.txt-color h2{
+    color: #2c3e50;
+}
+
+
+/* User Information Form Styles */
+#userform {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#userform input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#userform button {
+    background-color: #2980b9;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#userform button:hover {
+    background-color: #3498db;
+}
+
+/* Users List Table Styles */
+#userTable {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#userTable th,
+#userTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#userTable th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+#userTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#userTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Action buttons in table */
+#userTable button {
+    padding: 6px 12px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#userTable button.edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+#userTable button.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#userTable button:hover {
+    opacity: 0.8;
+}
+
